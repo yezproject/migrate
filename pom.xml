@@ -14,6 +14,8 @@
                     <version>4.27.0</version>
                     <configuration>
                         <propertyFile>liquibase.properties</propertyFile>
+                        <changeLogFile>changelog/db.changelog-root.xml</changeLogFile>
+                        <outputChangeLogFile>changelog/db.output.xml</outputChangeLogFile>
                     </configuration>
                     <dependencies>
                         <dependency>
