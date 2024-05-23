@@ -16,6 +16,8 @@
                         <propertyFile>liquibase.properties</propertyFile>
                         <changeLogFile>changelog/db.changelog-root.xml</changeLogFile>
                         <outputChangeLogFile>changelog/db.output.xml</outputChangeLogFile>
+                        <propertyFileWillOverride>true</propertyFileWillOverride>
+                        <searchPath>src/main/resources</searchPath>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -24,6 +26,14 @@
                             <version>42.6.0</version>
                         </dependency>
                     </dependencies>
+                    <executions>
+                        <execution>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>update</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>

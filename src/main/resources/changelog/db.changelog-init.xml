@@ -66,7 +66,8 @@
         <addUniqueConstraint columnNames="email" constraintName="uk_6dotkott2kjsp8vw4d0m25fb7" tableName="users"/>
     </changeSet>
     <changeSet author="yez" id="1716310495526-5">
-        <addUniqueConstraint columnNames="delete_info_id" constraintName="uk_qoyanjua3q8bbgd21d9x511rq" tableName="transactions"/>
+        <addUniqueConstraint columnNames="delete_info_id" constraintName="uk_qoyanjua3q8bbgd21d9x511rq"
+                             tableName="transactions"/>
     </changeSet>
     <changeSet author="yez" id="1716310495526-6">
         <createTable tableName="api_tokens">
@@ -106,6 +107,9 @@
         </createTable>
     </changeSet>
     <changeSet author="yez" id="1716310495526-9">
-        <addForeignKeyConstraint baseColumnNames="delete_info_id" baseTableName="transactions" constraintName="fk8fe7lhku2mi8ps8mpl8218hs2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="delete_infos" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="delete_info_id" baseTableName="transactions"
+                                 constraintName="fk8fe7lhku2mi8ps8mpl8218hs2" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="delete_infos" validate="true"/>
     </changeSet>
 </databaseChangeLog>
