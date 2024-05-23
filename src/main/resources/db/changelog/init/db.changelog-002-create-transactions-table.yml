@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1716310495526-2
+      author: yez
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: transactions_pkey
+                    nullable: false
+              - column:
+                  name: amount
+                  type: FLOAT8
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: VARCHAR(255)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creator_user_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_delete
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_date
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: update_date
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_info_id
+                  type: UUID
+  - changeSet:
+      id: 1716310495526-4
+      author: yez
+      changes:
+        - addUniqueConstraint:
+            tableName: transactions
+            columnNames: delete_info_id
+            constraintName: uk_qoyanjua3q8bbgd21d9x511rq
+  - changeSet:
+      id: 1716310495526-7
+      author: yez
+      changes:
+        - createTable:
+            tableName: delete_infos
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: delete_infos_pkey
+                    nullable: false
+              - column:
+                  name: date
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: reason
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 1716310495526-8
+      author: yez
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: transactions
+            baseColumnNames: delete_info_id
+            referencedTableName: delete_infos
+            referencedColumnNames: id
+            constraintName: fk8fe7lhku2mi8ps8mpl8218hs2
+            deferrable: false
+            initiallyDeferred: false
+            onUpdate: NO ACTION
+            onDelete: NO ACTION
+            validate: true

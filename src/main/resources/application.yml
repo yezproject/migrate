@@ -1,0 +1,8 @@
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-root.yml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pet
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver

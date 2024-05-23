@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1716310495526-6
+      author: yez
+      changes:
+        - createTable:
+            tableName: categories
+            columns:
+              - column:
+                  name: id
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: categories_pkey
+                    nullable: false
+              - column:
+                  name: create_user_id
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
