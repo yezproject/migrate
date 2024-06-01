@@ -39,4 +39,5 @@ build/
 .idea
 
 ### Ignore Local Change Log Diff ###
-changelog-sample*
+snapshot.json
+diff-changelog.sql

@@ -18,12 +18,12 @@ CREATE TABLE "transactions"
     CONSTRAINT "transactions_pkey" PRIMARY KEY ("id")
 );
 
--- changeset Admin:1717228764547-4
+-- changeset yez:1717228764547-4
 ALTER TABLE "transactions"
     ADD CONSTRAINT "uk_qoyanjua3q8bbgd21d9x511rq" UNIQUE ("delete_info_id");
 
 
--- changeset Admin:1717228764547-7
+-- changeset yez:1717228764547-7
 CREATE TABLE "delete_infos"
 (
     "id"     UUID                     NOT NULL,
@@ -33,6 +33,6 @@ CREATE TABLE "delete_infos"
 );
 
 
--- changeset Admin:1717228764547-8
+-- changeset yez:1717228764547-8
 ALTER TABLE "transactions"
     ADD CONSTRAINT "fk8fe7lhku2mi8ps8mpl8218hs2" FOREIGN KEY ("delete_info_id") REFERENCES "delete_infos" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION;

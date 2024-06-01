@@ -1,4 +1,5 @@
 databaseChangeLog:
   - includeAll:
+      ignore: true
       relativeToChangelogFile: true
-      path: ./0.0.1
+      path: .
