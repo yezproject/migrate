@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset yez:1717228764547-6
+-- changeset yez:20240601-6
 CREATE TABLE "categories"
 (
     "id"             VARCHAR(255) NOT NULL,

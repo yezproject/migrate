@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset yez:1717228764547-1
+-- changeset yez:20240601-1
 CREATE TABLE "users"
 (
     "id"          VARCHAR(255)             NOT NULL,
@@ -14,6 +14,6 @@ CREATE TABLE "users"
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
 
--- changeset yez:1717228764547-3
+-- changeset yez:20240601-2
 ALTER TABLE "users"
-    ADD CONSTRAINT "uk_6dotkott2kjsp8vw4d0m25fb7" UNIQUE ("email");
+    ADD CONSTRAINT "users_email_unique" UNIQUE ("email");

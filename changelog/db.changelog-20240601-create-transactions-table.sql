@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset yez:1717228764547-2
+-- changeset yez:20240601-3
 CREATE TABLE "transactions"
 (
     "id"               VARCHAR(255)             NOT NULL,
@@ -18,12 +18,12 @@ CREATE TABLE "transactions"
     CONSTRAINT "transactions_pkey" PRIMARY KEY ("id")
 );
 
--- changeset yez:1717228764547-4
+-- changeset yez:20240601-4
 ALTER TABLE "transactions"
-    ADD CONSTRAINT "uk_qoyanjua3q8bbgd21d9x511rq" UNIQUE ("delete_info_id");
+    ADD CONSTRAINT "transactions_delete_info_id_unique" UNIQUE ("delete_info_id");
 
 
--- changeset yez:1717228764547-7
+-- changeset yez:20240601-5
 CREATE TABLE "delete_infos"
 (
     "id"     UUID                     NOT NULL,
@@ -33,6 +33,6 @@ CREATE TABLE "delete_infos"
 );
 
 
--- changeset yez:1717228764547-8
+-- changeset yez:20240601-6
 ALTER TABLE "transactions"
-    ADD CONSTRAINT "fk8fe7lhku2mi8ps8mpl8218hs2" FOREIGN KEY ("delete_info_id") REFERENCES "delete_infos" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION;
+    ADD CONSTRAINT "transactions_delete_info_id_fkey" FOREIGN KEY ("delete_info_id") REFERENCES "delete_infos" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION;

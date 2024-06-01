@@ -1,4 +1,7 @@
 # Migration Liquibase Tool
+> Run all in unix-base terminal (`gitbash` with Windows)
+
+> Using auto generate changelog will generate random name of constraint, pkey, fkey, index, ... (need to be renamed for good convention)
 
 ## Update db
 Run this to sync your database using all script:
@@ -7,6 +10,7 @@ liquibase \
 --url=jdbc:postgresql://localhost:5432/pet \
 --username=admin \
 --password=admin \
+update
 ```
 
 ## Snapshot

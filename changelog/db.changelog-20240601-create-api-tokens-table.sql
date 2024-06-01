@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset yez:1717228764547-5
+-- changeset yez:20240601-7
 CREATE TABLE "api_tokens"
 (
     "id"      VARCHAR(255) NOT NULL,
